@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "instructor")
-public class Instructor {
+public class Instructor_uni {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,7 +52,7 @@ public class Instructor {
         tempCourse.setInstructor(this);
 
     }
-    public Instructor(){}
+    public Instructor_uni(){}
 
     public int getId() {
         return id;
@@ -94,7 +94,7 @@ public class Instructor {
         this.instructorDetail = instructorDetail;
     }
 
-    public Instructor(String firstName, String lastName, String email) {
+    public Instructor_uni(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

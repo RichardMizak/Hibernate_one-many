@@ -1,10 +1,13 @@
-package sk.kasv.mizak.hibernate.entity;
+package sk.kasv.mizak.hibernate.one_many;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import sk.kasv.mizak.hibernate.entity.Course;
+import sk.kasv.mizak.hibernate.entity.Instructor;
+import sk.kasv.mizak.hibernate.entity.InstructorDetail;
 
-public class DeleteCourseDemo {
+public class CreateInstructorDemo {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").
                 addAnnotatedClass(Instructor.class).
@@ -15,17 +18,33 @@ public class DeleteCourseDemo {
         Session session = factory.getCurrentSession();
 
         try {
+
+
+
+
+            Instructor tempInstructor =
+                    new Instructor("susan", "doe", "susan@gmail.com");
+
+            InstructorDetail tempInstructionDetail =
+                    new InstructorDetail(
+                            "http://youtube.com/susan",
+                            "video games");
+
+
+
+            tempInstructor.setInstructorDetail(tempInstructionDetail);
+
+
             session.beginTransaction();
 
-            int theId = 10;
-            Course tempCourse = session.get(Course.class, theId);
 
-            System.out.println("Deleting course: " + tempCourse);
-            session.delete(tempCourse);
+            System.out.println("saving instructor: " + tempInstructor);
+            session.save(tempInstructor);
 
             session.getTransaction().commit();
             System.out.println("Done");
         }finally {
+
 
             session.close();
 

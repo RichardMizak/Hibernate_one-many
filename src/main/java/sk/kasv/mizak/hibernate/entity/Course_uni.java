@@ -7,7 +7,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "course")
-public class Course {
+public class Course_uni {
 
 
 
@@ -74,11 +74,11 @@ public class Course {
         this.instructor = instructor;
     }
 
-    public Course(String title) {
+    public Course_uni(String title) {
         this.title = title;
     }
 
-    public Course(){
+    public Course_uni(){
 
     }
 

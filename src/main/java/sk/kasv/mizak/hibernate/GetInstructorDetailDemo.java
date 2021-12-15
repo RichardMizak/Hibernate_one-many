@@ -1,8 +1,10 @@
-package sk.kasv.mizak.hibernate.entity;
+package sk.kasv.mizak.hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import sk.kasv.mizak.hibernate.entity.Instructor;
+import sk.kasv.mizak.hibernate.entity.InstructorDetail;
 
 public class GetInstructorDetailDemo {
     public static void main(String[] args) {
